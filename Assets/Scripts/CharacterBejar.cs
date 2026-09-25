@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class CharacterBejar : MonoBehaviour
 {
-    [Header("Configuración de Movimiento")]
+    [Header("Movement Settings")]
     public float speed = 5f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
 
-    [Header("Poder Especial: Lanzar Objeto")]
+    [Header("Special Power: Projectile")]
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float bulletSpeed = 10f;
@@ -51,7 +51,7 @@ public class CharacterBejar : MonoBehaviour
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
             if (bulletRb != null)
             {
-                bulletRb.velocity = lastDirection * bulletSpeed;
+                bulletRb.linearVelocity = lastDirection * bulletSpeed;
             }
 
             Destroy(bullet, 3f);
